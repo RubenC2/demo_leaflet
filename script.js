@@ -11,11 +11,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 //Para capa personalizada, se puede usar la libreria leaflet-providers, comentar antes la capa de OpenStreetMap
-L.tileLayer.provider('OpenTopoMap').addTo(map);
+L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 
 
 //Agregar marcador
-const marker = L.marker([51.5, -0.09]).addTo(map);
+const marker = L.marker([51.5, -0.09])
+                .bindPopup("<b>Hello world!</b><br>I am a popup.")
+                .openPopup()
+                .addTo(map);
 
 //Agregar circulo
 const circle = L.circle([51.508, -0.11], {
